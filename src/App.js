@@ -38,14 +38,14 @@ export default class BooksApp extends React.Component {
 
     return (
       <div className="app">
-        <Route exact path="/" render={ () => (
+        <Route exact path={process.env.PUBLIC_URL + '/'} render={ () => (
           <ListBooks
             books={this.state.books}
             updateBook={this.updateBook}
             shelves={shelves}
           />
         )} />
-        <Route path="/search" render={ () => (
+        <Route path={process.env.PUBLIC_URL + '/search'} render={ () => (
           <SearchBooks
             books={this.state.books}
             updateBook={this.updateBook}
